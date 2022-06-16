@@ -4,11 +4,11 @@ import Navbar from './Navbar';
 
 function Layout({ children }) {
   return (
-    <>
+    <div className='font-nunito'>
       <Navbar />
       {children}
       <Footer />
-    </>
+    </div>
   );
 }
 

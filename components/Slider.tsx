@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 
 function Slider() {
   const featured: string[] = [
-    '/assets/slider1.jpg',
-    '/assets/slider2.jpg',
+    '/assets/slider1.jpeg',
+    '/assets/slider2.jpeg',
     '/assets/slider3.jpg',
   ];
 
@@ -24,10 +24,10 @@ function Slider() {
       style={{ transition: 'all 1.5s ease-in-out' }}
     >
       <div
-        className='absolute flex items-center top-0 bottom-0 left-0 pl-5 m-auto w-32 h-32 z-50 hover:cursor-pointer'
+        className='absolute flex items-center top-0 bottom-0 left-0 pl-5 m-auto w-20 h-20 z-50 hover:cursor-pointer'
         onClick={() => handleSlide('left')}
       >
-        <Image src='/assets/arrow-left.png' alt='' width='80' height='80' />
+        <Image src='/assets/arrow-left.png' alt='' width='60' height='60' />
       </div>
       <div
         className='flex w-[300vw] h-full'
@@ -49,10 +49,10 @@ function Slider() {
         ))}
       </div>
       <div
-        className='absolute flex items-center top-0 bottom-0 -right-6 m-auto w-32 h-32 hover:cursor-pointer'
+        className='absolute flex items-center top-0 bottom-0 right-0 m-auto w-20 h-20 hover:cursor-pointer'
         onClick={() => handleSlide('right')}
       >
-        <Image src='/assets/arrow-right.png' alt='' width='80' height='80' />
+        <Image src='/assets/arrow-right.png' alt='' width='60' height='60' />
       </div>
     </div>
   );

@@ -14,17 +14,17 @@ function Navbar() {
       <div className='flex items-center w-3/5'>
         <ul className='flex items-center justify-evenly w-full font-semibold text-xl'>
           <li className='transition-all hover:cursor-pointer hover:text-yellow'>
-            Home
+            <a href='/'>Home</a>
           </li>
           <li className='transition-all hover:cursor-pointer hover:text-yellow'>
-            Menu
+            <a href='#menu'>Menu</a>
           </li>
           <Image src='/assets/logo.png' alt='' width='150' height='150' />
           <li className='transition-all hover:cursor-pointer hover:text-yellow'>
-            Events
+            <a href='#events'>Events</a>
           </li>
           <li className='transition-all hover:cursor-pointer hover:text-yellow'>
-            Contact
+            <a href='#contact'>Contact</a>
           </li>
         </ul>
       </div>

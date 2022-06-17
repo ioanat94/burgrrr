@@ -28,7 +28,7 @@ function Navbar() {
           </li>
         </ul>
       </div>
-      <div className='relative flex items-center justify-end w-1/5'>
+      <div className='relative flex items-center justify-end w-1/5 cursor-pointer'>
         <Image src='/assets/cart.png' alt='' width='40' height='40' />
         <div className='absolute -top-3 -right-3 bg-lightYellow text-orange font-extrabold px-1.5 text-sm rounded-full'>
           2

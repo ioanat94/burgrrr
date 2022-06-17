@@ -2,36 +2,71 @@ import Image from 'next/image';
 import React from 'react';
 
 function Navbar() {
+  const toggleMenu = () => {
+    const btn = document.getElementById('menu-btn');
+    const nav = document.getElementById('menu');
+
+    btn.classList.toggle('open');
+    nav.classList.toggle('flex');
+    nav.classList.toggle('hidden');
+  };
+
   return (
-    <div className='sticky top-0 z-[999] flex items-center justify-between h-32 px-12 bg-brown text-lightYellow'>
-      <div className='flex items-center gap-5 w-1/5'>
+    <div className='sticky top-0 z-[999] flex items-center justify-between w-full h-32 px-8 bg-brown text-lightYellow md:px-12'>
+      <div className='hidden items-center gap-5 md:flex lg:w-[20%] xl:w-1/5'>
         <Image src='/assets/telephone.png' alt='' width='55' height='55' />
         <div>
           <div className='font-semibold'>ORDER NOW!</div>
-          <div className='text-2xl font-bold'>012 345 6789</div>
+          <div className='font-bold md:text-base lg:text-xl'>012 345 6789</div>
         </div>
       </div>
-      <div className='flex items-center w-3/5'>
+      <div className='flex items-center md:w-[70%] lg:w-[70%] xl:w-3/5'>
         <ul className='flex items-center justify-evenly w-full font-semibold text-xl'>
-          <li className='transition-all hover:cursor-pointer hover:text-yellow'>
+          <li className='transition-all hidden hover:cursor-pointer hover:text-yellow md:block'>
             <a href='/'>Home</a>
           </li>
-          <li className='transition-all hover:cursor-pointer hover:text-yellow'>
+          <li className='transition-all hidden hover:cursor-pointer hover:text-yellow md:block'>
             <a href='#menu'>Menu</a>
           </li>
           <Image src='/assets/logo.png' alt='' width='150' height='150' />
-          <li className='transition-all hover:cursor-pointer hover:text-yellow'>
+          <li className='transition-all hidden hover:cursor-pointer hover:text-yellow md:block'>
             <a href='#events'>Events</a>
           </li>
-          <li className='transition-all hover:cursor-pointer hover:text-yellow'>
+          <li className='transition-all hidden hover:cursor-pointer hover:text-yellow md:block'>
             <a href='#contact'>Contact</a>
           </li>
         </ul>
       </div>
-      <div className='relative flex items-center justify-end w-1/5 cursor-pointer'>
+      <div className='relative flex flex-col items-center gap-2 -left-2 cursor-pointer md:justify-end md:flex-row lg:w-[10%] xl:w-1/5'>
         <Image src='/assets/cart.png' alt='' width='40' height='40' />
         <div className='absolute -top-3 -right-3 bg-lightYellow text-orange font-extrabold px-1.5 text-sm rounded-full'>
           2
+        </div>
+        <button
+          id='menu-btn'
+          onClick={toggleMenu}
+          className='block hamburger md:hidden focus:outline-none'
+        >
+          <span className='hamburger-top'></span>
+          <span className='hamburger-mid'></span>
+          <span className='hamburger-bot'></span>
+        </button>
+        <div
+          id='menu'
+          className='absolute hidden flex-col items-center mx-auto top-20 right-2 py-6 px-10 space-y-6 bg-black'
+        >
+          <a href='/' onClick={toggleMenu}>
+            Home
+          </a>
+          <a href='#menu' onClick={toggleMenu}>
+            Menu
+          </a>
+          <a href='#events' onClick={toggleMenu}>
+            Events
+          </a>
+          <a href='#contact' onClick={toggleMenu}>
+            Contact
+          </a>
         </div>
       </div>
     </div>

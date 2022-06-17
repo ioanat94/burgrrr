@@ -5,7 +5,7 @@ function Footer() {
   return (
     <>
       <a className='anchor anchor-footer' id='contact'></a>
-      <div className='flex px-12 py-4 bg-black text-lightYellow text-center'>
+      <div className='flex px-12 py-4 bg-black text-lightYellow text-center hidden md:block'>
         <div>
           <Image src='/assets/logo.png' alt='' width='170' height='170' />
         </div>

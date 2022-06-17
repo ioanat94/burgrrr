@@ -29,7 +29,7 @@ function Product() {
         <div className='flex justify-between w-1/2'>
           <div
             className={`flex items-center gap-3 cursor-pointer border-b-2 border-lightYellow pb-2 ${
-              option === 0 && 'border-black'
+              option === 0 && 'border-[#000]'
             } `}
             onClick={() => setOption(0)}
           >
@@ -38,7 +38,7 @@ function Product() {
           </div>
           <div
             className={`flex items-center gap-3 cursor-pointer border-b-2 border-lightYellow pb-2 ${
-              option === 1 && 'border-black'
+              option === 1 && 'border-[#000]'
             } `}
             onClick={() => setOption(1)}
           >
@@ -47,7 +47,7 @@ function Product() {
           </div>
           <div
             className={`flex items-center gap-3 cursor-pointer border-b-2 border-lightYellow pb-2 ${
-              option === 2 && 'border-black'
+              option === 2 && 'border-[#000]'
             } `}
             onClick={() => setOption(2)}
           >

@@ -3,7 +3,7 @@ import React from 'react';
 
 function ProductCard() {
   return (
-    <div className='flex flex-col items-center p-5 w-[20%] cursor-pointer border-solid border-2 rounded-lg border-lightYellow transition-all hover:border-brown hover:shadow-xl'>
+    <div className='flex flex-col items-center p-5 w-[20%] cursor-pointer border-solid border-2 rounded-lg border-lightYellow transition-all hover:border-brown hover:shadow-xl hover:bg-[#e8e6b3]'>
       <Image src='/assets/burger.png' alt='' width='280' height='200' />
       <h3 className='text-lg font-extrabold text-brown'>THE CLASSIC</h3>
       <span className='text-lg font-bold'>€14.90</span>

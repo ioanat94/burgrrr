@@ -20,11 +20,11 @@ function Slider() {
 
   return (
     <div
-      className='slider-wrapper relative h-[calc(100vh-128px)] bg-black overflow-hidden'
+      className='slider-wrapper relative h-[855px] bg-black overflow-hidden'
       style={{ transition: 'all 1.5s ease-in-out' }}
     >
       <div
-        className='absolute flex items-center top-0 bottom-0 left-0 pl-5 m-auto w-20 h-20 z-50 hover:cursor-pointer'
+        className='absolute flex items-center top-0 bottom-0 left-0 pl-4 m-auto w-24 h-24 z-50 hover:cursor-pointer'
         onClick={() => handleSlide('left')}
       >
         <Image src='/assets/arrow-left.png' alt='' width='60' height='60' />
@@ -43,13 +43,13 @@ function Slider() {
               src={item}
               alt=''
               layout='fill'
-              className='object-cover object-center'
+              className='object-contain object-top'
             />
           </div>
         ))}
       </div>
       <div
-        className='absolute flex items-center top-0 bottom-0 right-0 m-auto w-20 h-20 hover:cursor-pointer'
+        className='absolute flex items-center top-0 bottom-0 right-0 pl-4 m-auto w-24 h-24 z-50 hover:cursor-pointer'
         onClick={() => handleSlide('right')}
       >
         <Image src='/assets/arrow-right.png' alt='' width='60' height='60' />

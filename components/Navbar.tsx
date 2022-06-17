@@ -8,7 +8,7 @@ function Navbar() {
         <Image src='/assets/telephone.png' alt='' width='55' height='55' />
         <div>
           <div className='font-semibold'>ORDER NOW!</div>
-          <div className='text-2xl font-bold'>012 345 678</div>
+          <div className='text-2xl font-bold'>012 345 6789</div>
         </div>
       </div>
       <div className='flex items-center w-3/5'>

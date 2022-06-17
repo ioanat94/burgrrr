@@ -3,7 +3,7 @@ import React from 'react';
 
 function Navbar() {
   return (
-    <div className='flex items-center justify-between h-32 px-12 bg-brown text-lightYellow sticky t-0 z-50'>
+    <div className='sticky top-0 z-50 flex items-center justify-between h-32 px-12 bg-brown text-lightYellow'>
       <div className='flex items-center gap-5 w-1/5'>
         <Image src='/assets/telephone.png' alt='' width='55' height='55' />
         <div>

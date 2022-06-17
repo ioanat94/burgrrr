@@ -13,7 +13,7 @@ module.exports = {
         'brown': '#854d27',
         'orange': '#dd7230',
         'yellow': '#f4c95d',
-        'lightYellow': '#e7e393',
+        'lightYellow': '#e6e2a1',
         'black':'#04030f',
       },
     },

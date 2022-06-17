@@ -16,3 +16,37 @@
 .anchor-menu {
   top: -128px;
 }
+
+.done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.in-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: inProgress 1s ease infinite alternate;
+}
+
+.not-done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.3;
+}
+
+.not-done .checkmark,
+.in-progress .checkmark {
+  display: none;
+}
+
+@keyframes inProgress {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

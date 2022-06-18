@@ -13,7 +13,7 @@ function Navbar() {
 
   return (
     <div className='sticky top-0 z-[999] flex items-center justify-between w-full h-20 px-8 bg-brown text-lightYellow md:px-12 md:h-32'>
-      <div className='hidden items-center gap-5 md:flex lg:w-[20%] xl:w-1/5'>
+      <div className='hidden items-center gap-5 md:flex md:flex-col md:gap-2 lg:flex-row lg:gap-2 lg:w-[20%] xl:w-1/5'>
         <Image src='/assets/telephone.png' alt='' width='55' height='55' />
         <div>
           <div className='font-semibold'>ORDER NOW!</div>

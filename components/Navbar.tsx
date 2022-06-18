@@ -26,7 +26,7 @@ function Navbar() {
             <a href='/'>Home</a>
           </li>
           <li className='hidden md:block md:transition-all md:hover:cursor-pointer md:hover:text-yellow'>
-            <a href='#menu'>Menu</a>
+            <a href='#products'>Menu</a>
           </li>
           <div className='relative w-[100px] h-[100px] md:w-[150px] md:h-[150px]'>
             <Image src='/assets/logo.png' alt='' layout='fill' />
@@ -61,7 +61,7 @@ function Navbar() {
           <a href='/' onClick={toggleMenu}>
             Home
           </a>
-          <a href='#menu' onClick={toggleMenu}>
+          <a href='#products' onClick={toggleMenu}>
             Menu
           </a>
           <a href='#events' onClick={toggleMenu}>

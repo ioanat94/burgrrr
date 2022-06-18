@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 function ProductList() {
   return (
     <>
-      <a className='anchor anchor-menu' id='menu'></a>
+      <a className='anchor anchor-products' id='products'></a>
       <div className='flex flex-col items-center gap-2 px-4 py-2 bg-lightYellow md:gap-4 lg:px-20 lg:py-10'>
         <h1 className='text-4xl font-extrabold text-center md:text-6xl'>
           THE JUICIEST BURGERS IN THE WEST

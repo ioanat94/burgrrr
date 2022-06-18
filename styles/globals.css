@@ -13,8 +13,14 @@
   visibility: hidden;
 }
 
-.anchor-menu {
+.anchor-products {
   top: -128px;
+}
+
+@media only screen and (max-width: 768px) {
+  .anchor {
+    top: -80px;
+  }
 }
 
 .done {

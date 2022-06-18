@@ -22,20 +22,20 @@ function Navbar() {
       </div>
       <div className='flex items-center md:w-[70%] lg:w-[70%] xl:w-3/5'>
         <ul className='flex items-center justify-evenly w-full font-semibold text-xl'>
-          <li className='transition-all hidden hover:cursor-pointer hover:text-yellow md:block'>
+          <li className='hidden md:block md:transition-all md:hover:cursor-pointer md:hover:text-yellow'>
             <a href='/'>Home</a>
           </li>
-          <li className='transition-all hidden hover:cursor-pointer hover:text-yellow md:block'>
+          <li className='hidden md:block md:transition-all md:hover:cursor-pointer md:hover:text-yellow'>
             <a href='#menu'>Menu</a>
           </li>
           <div className='relative w-[100px] h-[100px] md:w-[150px] md:h-[150px]'>
             <Image src='/assets/logo.png' alt='' layout='fill' />
           </div>
 
-          <li className='transition-all hidden hover:cursor-pointer hover:text-yellow md:block'>
+          <li className='hidden md:block md:transition-all md:hover:cursor-pointer md:hover:text-yellow'>
             <a href='#events'>Events</a>
           </li>
-          <li className='transition-all hidden hover:cursor-pointer hover:text-yellow md:block'>
+          <li className='hidden md:block md:transition-all md:hover:cursor-pointer md:hover:text-yellow'>
             <a href='#contact'>Contact</a>
           </li>
         </ul>
@@ -48,7 +48,7 @@ function Navbar() {
         <button
           id='menu-btn'
           onClick={toggleMenu}
-          className='block hamburger md:hidden focus:outline-none'
+          className='block hamburger focus:outline-none md:hidden'
         >
           <span className='hamburger-top'></span>
           <span className='hamburger-mid'></span>

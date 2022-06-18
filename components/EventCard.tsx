@@ -2,7 +2,7 @@ import React from 'react';
 
 function EventCard() {
   return (
-    <div className='flex flex-col items-center justify-center gap-4 p-5 w-[90%] md:w-[70%] lg:w-[50%] xl:w-[30%] md:py-10 border-solid border-2 rounded-lg border-brown transition-all hover:border-lightYellow hover:shadow-xl hover:bg-[#875431]'>
+    <div className='flex flex-col items-center justify-center gap-4 p-5 w-[90%] border-solid border-2 rounded-lg border-brown md:py-10 md:w-[70%] md:transition-all md:hover:border-lightYellow md:hover:shadow-xl md:hover:bg-[#875431] lg:w-[50%] xl:w-[30%]'>
       <div className='flex flex-col items-center'>
         <h3 className='text-lg text-center font-extrabold'>
           DOUBLE MEAT NIGHT

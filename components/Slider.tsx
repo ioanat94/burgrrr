@@ -1,59 +1,29 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React from 'react';
+import Carousel from 'react-slick';
 
 function Slider() {
-  const featured: string[] = [
-    '/assets/slider1.jpeg',
-    '/assets/slider2.jpeg',
-    '/assets/slider3.jpg',
-  ];
-
-  const [index, setIndex] = useState(0);
-
-  const handleSlide = (direction: string) => {
-    if (direction === 'left') {
-      setIndex(index !== 0 ? index - 1 : 2);
-    } else {
-      setIndex(index !== 2 ? index + 1 : 0);
-    }
+  var settings: object = {
+    infinite: true,
+    arrows: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
 
   return (
-    <div
-      className='slider-wrapper relative h-[855px] bg-black overflow-hidden'
-      style={{ transition: 'all 1.5s ease-in-out' }}
-    >
-      <div
-        className='absolute flex items-center top-0 bottom-0 left-0 pl-4 m-auto w-24 h-24 z-50 hover:cursor-pointer'
-        onClick={() => handleSlide('left')}
-      >
-        <Image src='/assets/arrow-left.png' alt='' width='60' height='60' />
-      </div>
-      <div
-        className='flex w-[300vw] h-full'
-        style={{
-          transform: `translateX(${-100 * index}vw)`,
-          transition: 'all 1s ease-in-out',
-        }}
-      >
-        {featured.map((item, i) => (
-          <div key={i} className='relative w-screen h-full'>
-            <Image
-              priority
-              src={item}
-              alt=''
-              layout='fill'
-              className='object-contain object-top'
-            />
-          </div>
-        ))}
-      </div>
-      <div
-        className='absolute flex items-center top-0 bottom-0 right-0 pl-4 m-auto w-24 h-24 z-50 hover:cursor-pointer'
-        onClick={() => handleSlide('right')}
-      >
-        <Image src='/assets/arrow-right.png' alt='' width='60' height='60' />
-      </div>
+    <div className='bg-lightYellow'>
+      <Carousel {...settings}>
+        <div>
+          <Image src='/assets/slider1.jpeg' alt='' width='1280' height='854' />
+        </div>
+        <div>
+          <Image src='/assets/slider2.jpeg' alt='' width='1280' height='854' />
+        </div>
+        <div>
+          <Image src='/assets/slider3.jpg' alt='' width='1280' height='854' />
+        </div>
+      </Carousel>
     </div>
   );
 }

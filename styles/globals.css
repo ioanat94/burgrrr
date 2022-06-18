@@ -98,3 +98,44 @@
 .open .hamburger-bot {
   transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
+
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+}
+.slick-next {
+  right: 4% !important;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 1298px) {
+  .slick-slide > div {
+    display: grid;
+    justify-content: center;
+    width: 80%;
+    margin-top: 50px;
+    margin: auto;
+    padding: 0px;
+    background: #e6e2a1;
+  }
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+  font-size: 40px;
+}
+
+@media only screen and (max-width: 1298px) {
+  .slick-prev:before,
+  .slick-next:before {
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 24px;
+  }
+}

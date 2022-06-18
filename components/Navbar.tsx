@@ -12,7 +12,7 @@ function Navbar() {
   };
 
   return (
-    <div className='sticky top-0 z-[999] flex items-center justify-between w-full h-32 px-8 bg-brown text-lightYellow md:px-12'>
+    <div className='sticky top-0 z-[999] flex items-center justify-between w-full h-20 px-8 bg-brown text-lightYellow md:px-12 md:h-32'>
       <div className='hidden items-center gap-5 md:flex lg:w-[20%] xl:w-1/5'>
         <Image src='/assets/telephone.png' alt='' width='55' height='55' />
         <div>
@@ -28,7 +28,10 @@ function Navbar() {
           <li className='transition-all hidden hover:cursor-pointer hover:text-yellow md:block'>
             <a href='#menu'>Menu</a>
           </li>
-          <Image src='/assets/logo.png' alt='' width='150' height='150' />
+          <div className='relative w-[100px] h-[100px] md:w-[150px] md:h-[150px]'>
+            <Image src='/assets/logo.png' alt='' layout='fill' />
+          </div>
+
           <li className='transition-all hidden hover:cursor-pointer hover:text-yellow md:block'>
             <a href='#events'>Events</a>
           </li>
@@ -37,9 +40,9 @@ function Navbar() {
           </li>
         </ul>
       </div>
-      <div className='relative flex flex-col items-center gap-2 -left-2 cursor-pointer md:justify-end md:flex-row lg:w-[10%] xl:w-1/5'>
+      <div className='relative flex items-center gap-5 -left-2 cursor-pointer md:justify-end lg:w-[10%] xl:w-1/5'>
         <Image src='/assets/cart.png' alt='' width='40' height='40' />
-        <div className='absolute -top-3 -right-3 bg-lightYellow text-orange font-extrabold px-1.5 text-sm rounded-full'>
+        <div className='absolute -top-3 right-8 bg-lightYellow text-orange font-extrabold px-1.5 text-sm rounded-full md:-right-3'>
           2
         </div>
         <button

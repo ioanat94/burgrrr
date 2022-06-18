@@ -5,7 +5,7 @@ function ProductList() {
   return (
     <>
       <a className='anchor anchor-menu' id='menu'></a>
-      <div className='flex flex-col items-center gap-2 md:gap-4 px-4 py-2 lg:px-20 bg-lightYellow'>
+      <div className='flex flex-col items-center gap-2 md:gap-4 px-4 py-2 lg:px-20 lg:py-10 bg-lightYellow'>
         <h1 className='text-4xl md:text-6xl font-extrabold text-center'>
           THE JUICIEST BURGERS IN THE WEST
         </h1>

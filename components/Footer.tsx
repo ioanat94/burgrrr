@@ -5,11 +5,11 @@ function Footer() {
   return (
     <>
       <a className='anchor anchor-footer' id='contact'></a>
-      <div className='flex px-12 py-4 bg-black text-lightYellow text-center hidden md:block'>
+      <div className='flex flex-col gap-4 items-center px-12 pt-4 pb-8 md:pt-8 bg-black text-lightYellow text-center md:flex-row'>
         <div>
           <Image src='/assets/logo.png' alt='' width='170' height='170' />
         </div>
-        <div className='flex gap-20 items-center justify-evenly w-full'>
+        <div className='flex flex-col gap-12 md:gap-20 items-center justify-evenly w-full md:flex-row md:flex-wrap'>
           <div className='text-3xl'>
             HOW GOOD IS THE{' '}
             <span className='text-orange font-extrabold'>burGRRR</span>

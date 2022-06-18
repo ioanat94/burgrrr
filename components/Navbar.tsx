@@ -26,17 +26,17 @@ function Navbar() {
             <a href='/'>Home</a>
           </li>
           <li className='hidden md:block md:transition-all md:hover:cursor-pointer md:hover:text-yellow'>
-            <a href='#products'>Menu</a>
+            <a href='/#products'>Menu</a>
           </li>
           <div className='relative w-[100px] h-[100px] md:w-[150px] md:h-[150px]'>
             <Image src='/assets/logo.png' alt='' layout='fill' />
           </div>
 
           <li className='hidden md:block md:transition-all md:hover:cursor-pointer md:hover:text-yellow'>
-            <a href='#events'>Events</a>
+            <a href='/#events'>Events</a>
           </li>
           <li className='hidden md:block md:transition-all md:hover:cursor-pointer md:hover:text-yellow'>
-            <a href='#contact'>Contact</a>
+            <a href='/#contact'>Contact</a>
           </li>
         </ul>
       </div>
@@ -61,13 +61,13 @@ function Navbar() {
           <a href='/' onClick={toggleMenu}>
             Home
           </a>
-          <a href='#products' onClick={toggleMenu}>
+          <a href='/#products' onClick={toggleMenu}>
             Menu
           </a>
-          <a href='#events' onClick={toggleMenu}>
+          <a href='/#events' onClick={toggleMenu}>
             Events
           </a>
-          <a href='#contact' onClick={toggleMenu}>
+          <a href='/#contact' onClick={toggleMenu}>
             Contact
           </a>
         </div>

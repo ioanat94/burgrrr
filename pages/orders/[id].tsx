@@ -11,19 +11,19 @@ function Order() {
   };
 
   return (
-    <div className='flex p-12 h-[calc(100vh-128px)]'>
-      <div className='flex-[2_2_0%] flex flex-col gap-20'>
+    <div className='flex flex-col gap-10 px-4 py-8 min-h-[calc(100vh-80px)] md:p-12 md:h-[calc(100vh-128px)] md:flex-row'>
+      <div className='md:flex-[2_2_0%] flex flex-col gap-20'>
         <div>
-          <table className='w-3/4'>
-            <thead className='text-left'>
+          <table className='text-center md:text-left md:w-3/4'>
+            <thead className='align-top'>
               <tr>
-                <th>Order ID</th>
-                <th>Customer</th>
-                <th>Address</th>
-                <th className='text-right'>Total</th>
+                <th className='text-center md:text-left'>Order ID</th>
+                <th className='text-center md:text-left'>Customer</th>
+                <th className='text-center md:text-left'>Address</th>
+                <th className='text-center md:text-right'>Total</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className='align-top'>
               <tr>
                 <td>
                   <span className='text-brown font-bold '>451614</span>
@@ -41,7 +41,7 @@ function Order() {
             </tbody>
           </table>
         </div>
-        <div className='flex justify-between w-3/4'>
+        <div className='flex justify-between md:w-3/4'>
           <div className={`flex flex-col items-center gap-2 ${statusClass(0)}`}>
             <Image src='/assets/paid.png' alt='' width='50' height='50' />
             <span>Payment</span>
@@ -72,8 +72,8 @@ function Order() {
           </div>
         </div>
       </div>
-      <div className='flex-1'>
-        <div className='flex flex-col items-center gap-5 max-w-[400px] max-h-[300px] bg-brown p-12 pt-10'>
+      <div className='text-center mx-auto md:flex-1'>
+        <div className='flex flex-col items-center gap-5 max-w-[400px] max-h-[300px] bg-brown p-12 pt-10 rounded-xl'>
           <h2 className='text-lightYellow font-extrabold text-2xl'>
             CART TOTAL
           </h2>

@@ -13,22 +13,28 @@ function Product() {
   const [option, setOption] = useState(1);
 
   return (
-    <div className='h-[calc(100vh-128px)] flex bg-lightYellow'>
+    <div className='flex flex-col pt-8 min-h-[calc(100vh-128px)] bg-lightYellow md:h-[calc(100vh-128px)] md:pt-0 md:flex-row'>
       <div className='flex items-center justify-center flex-1 h-full'>
-        <div className='relative w-[80%] h-[57%]'>
-          <Image src={burger.img} alt='' layout='fill' objectFit='contain' />
+        <div>
+          <Image
+            src={burger.img}
+            alt=''
+            width='835'
+            height='594'
+            objectFit='contain'
+          />
         </div>
       </div>
-      <div className='flex flex-col justify-center gap-5 flex-1 p-5'>
+      <div className='flex flex-col items-center justify-center gap-5 flex-1 p-5 md:items-start'>
         <h1 className='text-lg font-extrabold text-brown'>{burger.name}</h1>
         <span className='text-lg font-bold border-b border-black w-min'>
           €{burger.price[option]}
         </span>
-        <p className='text-lg w-1/2'>{burger.desc}</p>
+        <p className='text-lg lg:w-3/4 xl:w-2/3 2xl:w-1/2'>{burger.desc}</p>
         <h3 className='text-lg font-extrabold text-brown'>CHOOSE OPTION</h3>
-        <div className='flex justify-between w-1/2'>
+        <div className='flex flex-col gap-4 justify-between md:flex-row lg:w-3/4 xl:w-2/3 2xl:w-1/2'>
           <div
-            className={`flex items-center gap-3 cursor-pointer border-b-2 border-lightYellow pb-2 ${
+            className={`flex items-center gap-3 cursor-pointer max-w-max border-b-2 border-lightYellow pb-2 ${
               option === 0 && 'border-[#000]'
             } `}
             onClick={() => setOption(0)}
@@ -37,7 +43,7 @@ function Product() {
             <span className='font-bold'>VEGGIE</span>
           </div>
           <div
-            className={`flex items-center gap-3 cursor-pointer border-b-2 border-lightYellow pb-2 ${
+            className={`flex items-center gap-3 cursor-pointer max-w-max border-b-2 border-lightYellow pb-2 ${
               option === 1 && 'border-[#000]'
             } `}
             onClick={() => setOption(1)}
@@ -46,7 +52,7 @@ function Product() {
             <span className='font-bold'>BEEF</span>
           </div>
           <div
-            className={`flex items-center gap-3 cursor-pointer border-b-2 border-lightYellow pb-2 ${
+            className={`flex items-center gap-3 cursor-pointer max-w-max border-b-2 border-lightYellow pb-2 ${
               option === 2 && 'border-[#000]'
             } `}
             onClick={() => setOption(2)}
@@ -56,7 +62,7 @@ function Product() {
           </div>
         </div>
         <h3 className='text-lg font-extrabold text-brown'>EXTRAS</h3>
-        <div className='grid grid-cols-2 grid-rows-3 gap-y-3 w-1/2'>
+        <div className='grid grid-cols-1 gap-y-3 md:grid-cols-2 md:grid-rows-3 lg:w-3/4 xl:w-2/3 2xl:w-1/2'>
           <div className='flex items-center gap-2'>
             <input
               type='checkbox'
@@ -121,7 +127,7 @@ function Product() {
         </div>
         <div className='flex items-center gap-5'>
           <input type='number' defaultValue={1} className='w-14 h-8 indent-2' />
-          <button className='border-2 border-brown rounded-lg py-1 px-2 text-brown font-bold hover:text-lightYellow hover:bg-brown'>
+          <button className='border-2 border-brown rounded-lg py-1 px-2 text-brown font-bold md:hover:text-lightYellow md:hover:bg-brown'>
             Add to Cart
           </button>
         </div>

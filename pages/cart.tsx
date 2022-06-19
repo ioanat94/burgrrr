@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 function Cart() {
   return (
-    <div className='py-12 flex gap-10 text-lg bg-lightYellow h-[calc(100vh-128px)]'>
-      <div className='flex-[2_2_0%]'>
-        <table className='w-full text-center'>
+    <div className='min-h-[calc(100vh-80px)] px-2 py-12 flex flex-col gap-10 text-lg bg-lightYellow md:h-[calc(100vh-128px)] md:flex-row'>
+      <div className='md:flex-[2_2_0%]'>
+        <table className='w-full text-center text-base'>
           <thead>
             <tr>
               <th>Product</th>
@@ -30,7 +30,7 @@ function Cart() {
                 </div>
               </td>
               <td>
-                <span className='text-brown font-bold '>THE CLASSIC</span>
+                <span className='text-brown md:font-bold'>THE CLASSIC</span>
               </td>
               <td>
                 <span>Bacon, Hot sauce</span>
@@ -58,7 +58,7 @@ function Cart() {
                 </div>
               </td>
               <td>
-                <span className='text-brown font-bold '>THE CLASSIC</span>
+                <span className='text-brown md:font-bold'>THE CLASSIC</span>
               </td>
               <td>
                 <span>Bacon, Hot sauce</span>
@@ -86,7 +86,7 @@ function Cart() {
                 </div>
               </td>
               <td>
-                <span className='text-brown font-bold '>THE CLASSIC</span>
+                <span className='text-brown md:font-bold'>THE CLASSIC</span>
               </td>
               <td>
                 <span>Bacon, Hot sauce</span>
@@ -104,8 +104,8 @@ function Cart() {
           </tbody>
         </table>
       </div>
-      <div className='flex-1'>
-        <div className='flex flex-col items-center gap-5 max-w-[400px] max-h-[300px] bg-brown p-12 pt-10'>
+      <div className='text-center mx-auto md:flex-1'>
+        <div className='flex flex-col items-center gap-5 max-w-[400px] max-h-[300px] bg-brown p-12 pt-10 rounded-xl'>
           <h2 className='text-lightYellow font-extrabold text-2xl'>
             CART TOTAL
           </h2>
@@ -123,7 +123,7 @@ function Cart() {
               <span>€14.90</span>
             </div>
           </div>
-          <button className='text-lightYellow font-extrabold border-2 border-lightYellow rounded-lg w-max py-0.5 px-3 hover:text-brown hover:bg-lightYellow'>
+          <button className='text-lightYellow font-extrabold border-2 border-lightYellow rounded-lg w-max py-0.5 px-3 md:hover:text-brown md:hover:bg-lightYellow'>
             CHECKOUT
           </button>
         </div>

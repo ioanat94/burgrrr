@@ -29,7 +29,9 @@ function Navbar() {
             <a href='/#products'>Menu</a>
           </li>
           <div className='relative w-[100px] h-[100px] md:w-[150px] md:h-[150px]'>
-            <Image src='/assets/logo.png' alt='' layout='fill' />
+            <a href='/'>
+              <Image src='/assets/logo.png' alt='' layout='fill' />
+            </a>
           </div>
 
           <li className='hidden md:block md:transition-all md:hover:cursor-pointer md:hover:text-yellow'>
@@ -41,10 +43,12 @@ function Navbar() {
         </ul>
       </div>
       <div className='relative flex items-center gap-5 -left-2 cursor-pointer md:justify-end lg:w-[10%] xl:w-1/5'>
-        <Image src='/assets/cart.png' alt='' width='40' height='40' />
-        <div className='absolute -top-3 right-8 bg-lightYellow text-orange font-extrabold px-1.5 text-sm rounded-full md:-right-3'>
-          2
-        </div>
+        <a href='/cart'>
+          <Image src='/assets/cart.png' alt='' width='40' height='40' />
+          <div className='absolute -top-3 right-8 bg-lightYellow text-orange font-extrabold px-1.5 text-sm rounded-full md:-right-3'>
+            2
+          </div>
+        </a>
         <button
           id='menu-btn'
           onClick={toggleMenu}

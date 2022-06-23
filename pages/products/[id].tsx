@@ -4,7 +4,7 @@ import Image from 'next/image';
 function Product() {
   const burger = {
     id: 1,
-    img: '/assets/burger.png',
+    img: '/assets/burgers/theclassic.png',
     name: 'THE CLASSIC',
     price: ['12.90', '14.90', '19.90'],
     desc: 'The classic burGRRR experience. Beef patty, lettuce, onions, cheese, pickles. What more could you want?',
@@ -39,7 +39,12 @@ function Product() {
             } `}
             onClick={() => setOption(0)}
           >
-            <Image src='/assets/veggie.png' alt='' width='50' height='50' />
+            <Image
+              src='/assets/icons/veggie.png'
+              alt=''
+              width='50'
+              height='50'
+            />
             <span className='font-bold'>VEGGIE</span>
           </div>
           <div
@@ -48,7 +53,7 @@ function Product() {
             } `}
             onClick={() => setOption(1)}
           >
-            <Image src='/assets/beef.png' alt='' width='50' height='50' />
+            <Image src='/assets/icons/beef.png' alt='' width='50' height='50' />
             <span className='font-bold'>BEEF</span>
           </div>
           <div
@@ -57,7 +62,7 @@ function Product() {
             } `}
             onClick={() => setOption(2)}
           >
-            <Image src='/assets/meal.png' alt='' width='50' height='50' />
+            <Image src='/assets/icons/meal.png' alt='' width='50' height='50' />
             <span className='font-bold'>MEAL</span>
           </div>
         </div>

@@ -15,13 +15,28 @@ function Slider() {
     <div className='bg-lightYellow'>
       <Carousel {...settings}>
         <div>
-          <Image src='/assets/slider1.jpeg' alt='' width='1280' height='854' />
+          <Image
+            src='/assets/sliders/slider1.jpeg'
+            alt=''
+            width='1280'
+            height='854'
+          />
         </div>
         <div>
-          <Image src='/assets/slider2.jpeg' alt='' width='1280' height='854' />
+          <Image
+            src='/assets/sliders/slider2.jpeg'
+            alt=''
+            width='1280'
+            height='854'
+          />
         </div>
         <div>
-          <Image src='/assets/slider3.jpg' alt='' width='1280' height='854' />
+          <Image
+            src='/assets/sliders/slider3.jpg'
+            alt=''
+            width='1280'
+            height='854'
+          />
         </div>
       </Carousel>
     </div>

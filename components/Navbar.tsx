@@ -14,7 +14,12 @@ function Navbar() {
   return (
     <div className='sticky top-0 z-[999] flex items-center justify-between w-full h-20 px-8 bg-brown text-lightYellow md:px-12 md:h-32'>
       <div className='hidden items-center gap-5 md:flex md:flex-col md:gap-2 lg:flex-row lg:gap-2 lg:w-[20%] xl:w-1/5'>
-        <Image src='/assets/telephone.png' alt='' width='55' height='55' />
+        <Image
+          src='/assets/icons/telephone.png'
+          alt=''
+          width='55'
+          height='55'
+        />
         <div>
           <div className='font-semibold'>ORDER NOW!</div>
           <div className='font-bold md:text-base lg:text-xl'>012 345 6789</div>
@@ -44,7 +49,7 @@ function Navbar() {
       </div>
       <div className='relative flex items-center gap-5 -left-2 cursor-pointer md:justify-end lg:w-[10%] xl:w-1/5'>
         <a href='/cart'>
-          <Image src='/assets/cart.png' alt='' width='40' height='40' />
+          <Image src='/assets/icons/cart.png' alt='' width='40' height='40' />
           <div className='absolute -top-3 right-8 bg-lightYellow text-orange font-extrabold px-1.5 text-sm rounded-full md:-right-3'>
             2
           </div>

@@ -43,31 +43,66 @@ function Order() {
         </div>
         <div className='flex justify-between md:w-3/4'>
           <div className={`flex flex-col items-center gap-2 ${statusClass(0)}`}>
-            <Image src='/assets/paid.png' alt='' width='50' height='50' />
+            <Image src='/assets/icons/paid.png' alt='' width='50' height='50' />
             <span>Payment</span>
             <div className='checkmark'>
-              <Image src='/assets/checked.png' alt='' width='30' height='30' />
+              <Image
+                src='/assets/icons/checked.png'
+                alt=''
+                width='30'
+                height='30'
+              />
             </div>
           </div>
           <div className={`flex flex-col items-center gap-2 ${statusClass(1)}`}>
-            <Image src='/assets/preparing.png' alt='' width='50' height='50' />
+            <Image
+              src='/assets/icons/preparing.png'
+              alt=''
+              width='50'
+              height='50'
+            />
             <span>Preparing</span>
             <div className='checkmark'>
-              <Image src='/assets/checked.png' alt='' width='30' height='30' />
+              <Image
+                src='/assets/icons/checked.png'
+                alt=''
+                width='30'
+                height='30'
+              />
             </div>
           </div>
           <div className={`flex flex-col items-center gap-2 ${statusClass(2)}`}>
-            <Image src='/assets/ontheway.png' alt='' width='50' height='50' />
+            <Image
+              src='/assets/icons/ontheway.png'
+              alt=''
+              width='50'
+              height='50'
+            />
             <span>On the way</span>
             <div className='checkmark'>
-              <Image src='/assets/checked.png' alt='' width='30' height='30' />
+              <Image
+                src='/assets/icons/checked.png'
+                alt=''
+                width='30'
+                height='30'
+              />
             </div>
           </div>
           <div className={`flex flex-col items-center gap-2 ${statusClass(3)}`}>
-            <Image src='/assets/delivered.png' alt='' width='50' height='50' />
+            <Image
+              src='/assets/icons/delivered.png'
+              alt=''
+              width='50'
+              height='50'
+            />
             <span>Delivered</span>
             <div className='checkmark'>
-              <Image src='/assets/checked.png' alt='' width='30' height='30' />
+              <Image
+                src='/assets/icons/checked.png'
+                alt=''
+                width='30'
+                height='30'
+              />
             </div>
           </div>
         </div>

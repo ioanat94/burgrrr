@@ -21,7 +21,7 @@ function Cart() {
               <td className='pt-5'>
                 <div>
                   <Image
-                    src='/assets/burger.png'
+                    src='/assets/burgers/theclassic.png'
                     alt=''
                     objectFit='cover'
                     width='140'
@@ -49,7 +49,7 @@ function Cart() {
               <td className='pt-5'>
                 <div>
                   <Image
-                    src='/assets/burger.png'
+                    src='/assets/burgers/theclassic.png'
                     alt=''
                     objectFit='cover'
                     width='140'
@@ -77,7 +77,7 @@ function Cart() {
               <td className='pt-5'>
                 <div>
                   <Image
-                    src='/assets/burger.png'
+                    src='/assets/burgers/theclassic.png'
                     alt=''
                     objectFit='cover'
                     width='140'

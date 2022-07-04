@@ -10,6 +10,7 @@ import {
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { reset } from '../redux/cartSlice';
+import OrderDetails from '../components/OrderDetails';
 
 function Cart() {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function Cart() {
   const cart = useSelector((state: RootState) => state.cart);
 
   const [open, setOpen] = useState(false);
+  const [cash, setCash] = useState(false);
 
   const amount = cart.total;
   const currency = 'EUR';
@@ -164,7 +166,10 @@ function Cart() {
           </div>
           {open ? (
             <div className='flex flex-col gap-2'>
-              <button className='bg-lightYellow text-brown font-bold rounded w-full h-9 md:hover:bg-[#d1ce8e]'>
+              <button
+                className='bg-lightYellow text-brown font-bold rounded w-full h-9 md:hover:bg-[#d1ce8e]'
+                onClick={() => setCash(true)}
+              >
                 CASH ON DELIVERY
               </button>
               <PayPalScriptProvider
@@ -188,6 +193,7 @@ function Cart() {
           )}
         </div>
       </div>
+      {cash && <OrderDetails total={cart.total} createOrder={createOrder} />}
     </div>
   );
 }

@@ -7,16 +7,31 @@ import {
   PayPalScriptProvider,
   usePayPalScriptReducer,
 } from '@paypal/react-paypal-js';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import { reset } from '../redux/cartSlice';
 
 function Cart() {
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const cart = useSelector((state: RootState) => state.cart);
+
   const [open, setOpen] = useState(false);
-  const amount = '2';
+
+  const amount = cart.total;
   const currency = 'EUR';
   // prettier-ignore
   const style = { "layout": "vertical" };
 
-  const dispatch = useDispatch();
-  const cart = useSelector((state: RootState) => state.cart);
+  const createOrder = async (data) => {
+    try {
+      const res = await axios.post('http://localhost:3000/api/orders', data);
+      res.status === 201 && router.push('/orders/' + res.data._id);
+      dispatch(reset());
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const ButtonWrapper = ({ currency, showSpinner }) => {
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
@@ -46,7 +61,7 @@ function Cart() {
                   {
                     amount: {
                       currency_code: currency,
-                      value: amount,
+                      value: `${amount}`,
                     },
                   },
                 ],
@@ -58,7 +73,13 @@ function Cart() {
           }}
           onApprove={function (data, actions) {
             return actions.order.capture().then(function (details) {
-              console.log(details);
+              const shipping = details.purchase_units[0].shipping;
+              createOrder({
+                customer: shipping.name.full_name,
+                address: shipping.address.address_line_1,
+                total: cart.total,
+                paymentMethod: 1,
+              });
             });
           }}
         />

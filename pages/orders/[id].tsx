@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
+import axios from 'axios';
 
-function Order() {
-  const status = 0;
+function Order({ order }) {
+  const status = order.status;
 
   const statusClass = (index) => {
     if (index - status < 1) return 'done';
@@ -26,16 +27,16 @@ function Order() {
             <tbody className='align-top'>
               <tr>
                 <td>
-                  <span className='text-brown font-bold '>451614</span>
+                  <span className='text-brown font-bold '>{order._id}</span>
                 </td>
                 <td>
-                  <span>Bobby Mackey</span>
+                  <span>{order.customer}</span>
                 </td>
                 <td>
-                  <span>Suometsäntie 75, 00740 Helsinki</span>
+                  <span>{order.address}</span>
                 </td>
                 <td className='text-right'>
-                  <span className='font-bold'>€14.90</span>
+                  <span className='font-bold'>€{order.total}</span>
                 </td>
               </tr>
             </tbody>
@@ -115,7 +116,7 @@ function Order() {
           <div>
             <div>
               <span className='font-bold mr-2'>Subtotal: </span>
-              <span>€14.90</span>
+              <span>€{order.total}</span>
             </div>
             <div>
               <span className='font-bold mr-2'>Discount: </span>
@@ -123,7 +124,7 @@ function Order() {
             </div>
             <div>
               <span className='font-bold mr-2'>Total: </span>
-              <span>€14.90</span>
+              <span>€{order.total}</span>
             </div>
           </div>
           <button
@@ -137,5 +138,14 @@ function Order() {
     </div>
   );
 }
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+  return {
+    props: {
+      order: res.data,
+    },
+  };
+};
 
 export default Order;

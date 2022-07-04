@@ -124,9 +124,13 @@ function Cart() {
                 </td>
                 <td>
                   <span>
-                    {product.extras.map((extra) => (
-                      <span key={extra._id}>{extra.text} | </span>
-                    ))}
+                    {product.extraList.map((extra, i, extraList) => {
+                      if (extraList.length - 1 === i) {
+                        return <span key={extra._id}>{extra.text}</span>;
+                      } else {
+                        return <span key={extra._id}>{extra.text} | </span>;
+                      }
+                    })}
                   </span>
                 </td>
                 <td>

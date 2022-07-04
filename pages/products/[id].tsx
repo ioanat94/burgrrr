@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../redux/cartSlice';
 
 function Product({ product }) {
   const [price, setPrice] = useState(product.prices[1]);
   const [option, setOption] = useState(1);
   const [extraList, setExtraList] = useState([]);
   const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
 
   const changePrice = (number) => {
     setPrice(price + number);
@@ -28,6 +31,10 @@ function Product({ product }) {
       changePrice(-extra.price);
       setExtraList(extraList.filter((ex) => ex._id != extra._id));
     }
+  };
+
+  const handleClick = () => {
+    dispatch(addProduct({ ...product, extraList, price, quantity }));
   };
 
   return (
@@ -110,7 +117,10 @@ function Product({ product }) {
             className='w-14 h-8 indent-2'
             onChange={(e) => setQuantity(parseInt(e.target.value))}
           />
-          <button className='border-2 border-brown rounded-lg py-1 px-2 text-brown font-bold md:hover:text-lightYellow md:hover:bg-brown'>
+          <button
+            className='border-2 border-brown rounded-lg py-1 px-2 text-brown font-bold md:hover:text-lightYellow md:hover:bg-brown'
+            onClick={handleClick}
+          >
             Add to Cart
           </button>
         </div>

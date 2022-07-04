@@ -1,11 +1,70 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
+import {
+  PayPalButtons,
+  PayPalScriptProvider,
+  usePayPalScriptReducer,
+} from '@paypal/react-paypal-js';
 
 function Cart() {
+  const [open, setOpen] = useState(false);
+  const amount = '2';
+  const currency = 'EUR';
+  // prettier-ignore
+  const style = { "layout": "vertical" };
+
   const dispatch = useDispatch();
   const cart = useSelector((state: RootState) => state.cart);
+
+  const ButtonWrapper = ({ currency, showSpinner }) => {
+    const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
+
+    useEffect(() => {
+      dispatch({
+        type: 'resetOptions',
+        value: {
+          ...options,
+          currency: currency,
+        },
+      });
+    }, [currency, showSpinner]);
+
+    return (
+      <>
+        {showSpinner && isPending && <div className='spinner' />}
+        <PayPalButtons
+          style={{ layout: 'vertical' }}
+          disabled={false}
+          forceReRender={[amount, currency, style]}
+          fundingSource={'paypal'}
+          createOrder={(data, actions) => {
+            return actions.order
+              .create({
+                purchase_units: [
+                  {
+                    amount: {
+                      currency_code: currency,
+                      value: amount,
+                    },
+                  },
+                ],
+              })
+              .then((orderId) => {
+                // Your code here after create the order
+                return orderId;
+              });
+          }}
+          onApprove={function (data, actions) {
+            return actions.order.capture().then(function (details) {
+              console.log(details);
+            });
+          }}
+        />
+      </>
+    );
+  };
 
   return (
     <div className='min-h-[calc(100vh-80px)] px-2 py-12 flex flex-col gap-10 text-lg bg-lightYellow md:h-[calc(100vh-128px)] md:flex-row'>
@@ -71,7 +130,7 @@ function Cart() {
           <div>
             <div>
               <span className='font-bold mr-2'>Subtotal: </span>
-              <span>€{cart.total}0</span>
+              <span>€{cart.total}</span>
             </div>
             <div>
               <span className='font-bold mr-2'>Discount: </span>
@@ -79,12 +138,33 @@ function Cart() {
             </div>
             <div>
               <span className='font-bold mr-2'>Total: </span>
-              <span>€{cart.total}0</span>
+              <span>€{cart.total}</span>
             </div>
           </div>
-          <button className='text-lightYellow font-extrabold border-2 border-lightYellow rounded-lg w-max py-0.5 px-3 md:hover:text-brown md:hover:bg-lightYellow'>
-            CHECKOUT
-          </button>
+          {open ? (
+            <div className='flex flex-col gap-2'>
+              <button className='bg-lightYellow text-brown font-bold rounded w-full h-9 md:hover:bg-[#d1ce8e]'>
+                CASH ON DELIVERY
+              </button>
+              <PayPalScriptProvider
+                options={{
+                  'client-id':
+                    'Afl0YtnjwhcDMPkoGej1g-h6uvZ9A5QYEUxKZxKAu5922-j2mamiKLwNJTiZCfpKUyt1T97UEYJjCxvZ',
+                  components: 'buttons',
+                  currency: 'EUR',
+                }}
+              >
+                <ButtonWrapper currency={currency} showSpinner={false} />
+              </PayPalScriptProvider>
+            </div>
+          ) : (
+            <button
+              className='text-lightYellow font-extrabold border-2 border-lightYellow rounded-lg w-max py-0.5 px-3 md:hover:text-brown md:hover:bg-lightYellow'
+              onClick={() => setOpen(true)}
+            >
+              CHECKOUT
+            </button>
+          )}
         </div>
       </div>
     </div>

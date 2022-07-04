@@ -128,7 +128,7 @@ function Cart() {
                       if (extraList.length - 1 === i) {
                         return <span key={extra._id}>{extra.text}</span>;
                       } else {
-                        return <span key={extra._id}>{extra.text} | </span>;
+                        return <span key={extra._id}>{extra.text}, </span>;
                       }
                     })}
                   </span>

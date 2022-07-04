@@ -15,7 +15,7 @@ function Order({ order }) {
     <div className='flex flex-col gap-10 px-4 py-8 min-h-[calc(100vh-80px)] md:p-12 md:h-[calc(100vh-128px)] md:flex-row'>
       <div className='md:flex-[2_2_0%] flex flex-col gap-20'>
         <div>
-          <table className='text-center md:text-left md:w-3/4'>
+          <table className='text-center table-fixed md:text-left md:w-3/4'>
             <thead className='align-top'>
               <tr>
                 <th className='text-center md:text-left'>Order ID</th>
@@ -26,8 +26,8 @@ function Order({ order }) {
             </thead>
             <tbody className='align-top'>
               <tr>
-                <td>
-                  <span className='text-brown font-bold '>{order._id}</span>
+                <td className='w-1/4 break-all'>
+                  <span className='text-brown font-bold'>{order._id}</span>
                 </td>
                 <td>
                   <span>{order.customer}</span>

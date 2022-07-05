@@ -42,7 +42,7 @@ function Product({ product }) {
       <div className='flex items-center justify-center flex-1 h-full'>
         <div>
           <Image
-            src={`/assets/burgers/${product.img}`}
+            src={product.img}
             alt=''
             width='835'
             height='594'

@@ -109,7 +109,7 @@ function Cart() {
                 <td className='pt-5'>
                   <div>
                     <Image
-                      src={`/assets/burgers/${product.img}`}
+                      src={product.img}
                       alt=''
                       objectFit='cover'
                       width='140'

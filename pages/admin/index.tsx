@@ -54,7 +54,7 @@ function Index({ products, orders }) {
               <tr key={product._id}>
                 <td>
                   <Image
-                    src={`/assets/burgers/${product.img}`}
+                    src={product.img}
                     alt=''
                     objectFit='cover'
                     width='140'

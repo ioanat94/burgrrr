@@ -14,9 +14,27 @@ function Events() {
           putting some pants on. Bring your friends too!
         </p>
         <div className='flex flex-col items-center gap-4 w-full'>
-          <EventCard />
-          <EventCard />
-          <EventCard />
+          <EventCard
+            title={'DOUBLE MEAT NIGHT'}
+            dateTime={'05.08 // 18:00-22:00'}
+            description={
+              'All beef patties doubled, same price. Fries on the house. First drink on the house.'
+            }
+          />
+          <EventCard
+            title={'WE ARE FAMILY'}
+            dateTime={'12.08 // 18:00-22:00'}
+            description={
+              'Get 5% off for every family member you bring along. Free chocolate bar. First drink on the house.'
+            }
+          />
+          <EventCard
+            title={'SPORTSBALL NIGHT'}
+            dateTime={'19.08 // 18:00-22:00'}
+            description={
+              'Come watch the game with us. 50% off chips and peanuts. First drink on the house.'
+            }
+          />
         </div>
       </div>
     </>

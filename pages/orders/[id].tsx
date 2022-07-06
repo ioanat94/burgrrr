@@ -89,7 +89,7 @@ function Order({ order }) {
               />
             </div>
           </div>
-          <div className={`flex flex-col items-center gap-2 ${statusClass(3)}`}>
+          <div className={`flex flex-col items-center gap-2 ${statusClass(2)}`}>
             <Image
               src='/assets/icons/delivered.png'
               alt=''

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
 function Add({ setClose }) {
@@ -9,6 +9,8 @@ function Add({ setClose }) {
   const [prices, setPrices] = useState([]);
   const [extraOptions, setExtraOptions] = useState([]);
   const [extra, setExtra] = useState(null);
+
+  const router = useRouter();
 
   const changePrice = (e, i) => {
     const currentPrices = prices;
@@ -48,6 +50,7 @@ function Add({ setClose }) {
 
       await axios.post('http://localhost:3000/api/products', newProduct);
       setClose(true);
+      router.reload();
     } catch (err) {
       console.log(err);
     }

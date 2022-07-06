@@ -1,8 +1,10 @@
 import axios from 'axios';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import Add from '../../components/Add';
 
 function Index({ products, orders }) {
+  const [close, setClose] = useState(true);
   const [productList, setProductList] = useState(products);
   const [orderList, setOrderList] = useState(orders);
   const status = ['Preparing', 'On the way', 'Delivered'];
@@ -64,26 +66,36 @@ function Index({ products, orders }) {
                 <td className='max-w-[100px] truncate'>{product._id}</td>
                 <td>{product.title}</td>
                 <td>€{product.prices[1]}</td>
-                <td className='flex pt-6 gap-2 pt-[34px] md:pt-9'>
-                  <button>
-                    <Image
-                      src='/assets/icons/edit.png'
-                      width='30'
-                      height='30'
-                    />
-                  </button>
-                  <button onClick={() => handleDelete(product._id)}>
-                    <Image
-                      src='/assets/icons/delete.png'
-                      width='30'
-                      height='30'
-                    />
-                  </button>
+                <td>
+                  <span className='flex gap-2'>
+                    <button onClick={() => setClose(false)}>
+                      <Image
+                        src='/assets/icons/add.png'
+                        width='30'
+                        height='30'
+                      />
+                    </button>
+                    <button onClick={() => setClose(false)}>
+                      <Image
+                        src='/assets/icons/edit.png'
+                        width='30'
+                        height='30'
+                      />
+                    </button>
+                    <button onClick={() => handleDelete(product._id)}>
+                      <Image
+                        src='/assets/icons/delete.png'
+                        width='30'
+                        height='30'
+                      />
+                    </button>
+                  </span>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+        {!close && <Add setClose={setClose} />}
       </div>
       <div className='flex flex-col gap-12 w-full'>
         <h1 className='text-2xl font-bold'>Orders</h1>

@@ -69,7 +69,7 @@ function Index({ products, orders }) {
                 </td>
                 <td className='max-w-[100px] truncate'>{product._id}</td>
                 <td>{product.title}</td>
-                <td>€{product.prices[1]}</td>
+                <td>€{product.prices[1].toFixed(2)}</td>
                 <td>
                   <span className='flex gap-2'>
                     <button

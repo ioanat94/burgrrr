@@ -82,7 +82,7 @@ function Navbar() {
         </button>
         <div
           id='menu'
-          className='absolute hidden flex-col items-center mx-auto top-20 right-2 py-6 px-10 space-y-6 bg-black'
+          className='absolute hidden flex-col items-center mx-auto top-12 right-0 py-6 px-10 space-y-6 bg-black'
         >
           <Link href='/' passHref>
             <a onClick={toggleMenu}>Home</a>

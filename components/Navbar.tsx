@@ -25,7 +25,7 @@ function Navbar() {
       <div className='hidden items-center gap-5 md:flex md:flex-col md:gap-2 lg:flex-row lg:gap-2 lg:w-[20%] xl:w-1/5'>
         <Image
           src='/assets/icons/telephone.png'
-          alt=''
+          alt='Phone icon'
           width='55'
           height='55'
         />
@@ -49,7 +49,11 @@ function Navbar() {
           <div className='relative w-[100px] h-[100px] md:w-[150px] md:h-[150px]'>
             <Link href='/' passHref>
               <a>
-                <Image src='/assets/logo.png' alt='' layout='fill' />
+                <Image
+                  src='/assets/logo.png'
+                  alt='Burgrrr logo'
+                  layout='fill'
+                />
               </a>
             </Link>
           </div>

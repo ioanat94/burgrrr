@@ -77,6 +77,7 @@ function Index({ products, orders }) {
                     >
                       <Image
                         src='/assets/icons/add.png'
+                        alt=''
                         width='30'
                         height='30'
                       />
@@ -90,6 +91,7 @@ function Index({ products, orders }) {
                     >
                       <Image
                         src='/assets/icons/edit.png'
+                        alt=''
                         width='30'
                         height='30'
                       />
@@ -97,6 +99,7 @@ function Index({ products, orders }) {
                     <button onClick={() => handleDelete(product._id)}>
                       <Image
                         src='/assets/icons/delete.png'
+                        alt=''
                         width='30'
                         height='30'
                       />
@@ -144,6 +147,7 @@ function Index({ products, orders }) {
                   >
                     <Image
                       src='/assets/icons/next.png'
+                      alt=''
                       width='24'
                       height='24'
                     />

@@ -68,6 +68,7 @@ function Cart() {
           currency: currency,
         },
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currency, showSpinner]);
 
     return (
@@ -132,6 +133,7 @@ function Cart() {
                 <td className='text-right md:hover:cursor-pointer'>
                   <Image
                     src='/assets/icons/remove.png'
+                    alt=''
                     width='30'
                     height='30'
                     onClick={() => handleClick(product)}

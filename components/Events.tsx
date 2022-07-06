@@ -10,7 +10,7 @@ function Events() {
           NEED AN EXCUSE TO LEAVE THE HOUSE?
         </h1>
         <p className='text-xl text-center md:w-[80%] lg:w-[70%]'>
-          Come hang out with us for a few hours. We promise it'll be worth
+          Come hang out with us for a few hours. We promise it&apos;ll be worth
           putting some pants on. Bring your friends too!
         </p>
         <div className='flex flex-col items-center gap-4 w-full'>

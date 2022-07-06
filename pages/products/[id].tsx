@@ -3,6 +3,7 @@ import Image from 'next/image';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../../redux/cartSlice';
+import { v4 as uuidv4 } from 'uuid';
 
 function Product({ product }) {
   const [price, setPrice] = useState(product.prices[1]);
@@ -34,6 +35,7 @@ function Product({ product }) {
   };
 
   const handleClick = () => {
+    product.cartId = uuidv4();
     dispatch(addProduct({ ...product, extraList, price, quantity }));
   };
 

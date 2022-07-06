@@ -6,7 +6,7 @@ let order;
   if (typeof window !== 'undefined') {
     order = localStorage.getItem('order')
       ? JSON.parse(localStorage.getItem('order'))
-      : [];
+      : localStorage.setItem('order', JSON.stringify({}));
     return order;
   }
 })();
@@ -25,6 +25,14 @@ const cartSlice = createSlice({
       state.total += action.payload.price * action.payload.quantity;
       localStorage.setItem('order', JSON.stringify(state));
     },
+    removeProduct: (state, action) => {
+      state.products = state.products.filter(
+        (product) => product.cartId !== action.payload.cartId
+      );
+      state.quantity -= 1;
+      state.total -= action.payload.price * action.payload.quantity;
+      localStorage.setItem('order', JSON.stringify(state));
+    },
     reset: (state) => {
       state.products = [];
       state.quantity = 0;
@@ -34,5 +42,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addProduct, reset } = cartSlice.actions;
+export const { addProduct, removeProduct, reset } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -11,6 +11,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import { reset } from '../redux/cartSlice';
 import OrderDetails from '../components/OrderDetails';
+import { removeProduct } from '../redux/cartSlice';
 
 function Cart() {
   const [cartTotal, setCartTotal] = useState(0);
@@ -19,7 +20,7 @@ function Cart() {
   const dispatch = useDispatch();
   const router = useRouter();
   const newCartTotal = useSelector((state: RootState) =>
-    state.cart.total.toFixed(2)
+    state.cart.total ? state.cart.total.toFixed(2) : '0.00'
   );
   const newCartProducts = useSelector(
     (state: RootState) => state.cart.products
@@ -47,6 +48,13 @@ function Cart() {
     } catch (err) {
       console.log(err);
     }
+  };
+
+  const handleClick = (product) => {
+    dispatch(removeProduct(product));
+    setCartProducts(
+      cartProducts.filter((item) => item.cartId !== product.cartId)
+    );
   };
 
   const ButtonWrapper = ({ currency, showSpinner }) => {
@@ -109,6 +117,7 @@ function Cart() {
         <table className='w-full text-center text-base'>
           <thead>
             <tr>
+              <th></th>
               <th>Product</th>
               <th>Name</th>
               <th>Extras</th>
@@ -119,7 +128,15 @@ function Cart() {
           </thead>
           <tbody>
             {cartProducts.map((product) => (
-              <tr key={product._id}>
+              <tr key={`${product._id}${Math.random() * 5}`}>
+                <td className='text-right md:hover:cursor-pointer'>
+                  <Image
+                    src='/assets/icons/remove.png'
+                    width='30'
+                    height='30'
+                    onClick={() => handleClick(product)}
+                  />
+                </td>
                 <td className='pt-5'>
                   <div>
                     <Image
@@ -148,14 +165,14 @@ function Cart() {
                   </span>
                 </td>
                 <td>
-                  <span>€{product.price}0</span>
+                  <span>€{product.price.toFixed(2)}</span>
                 </td>
                 <td>
                   <span>{product.quantity}</span>
                 </td>
                 <td>
                   <span className='font-bold'>
-                    €{product.price * product.quantity}0
+                    €{(product.price * product.quantity).toFixed(2)}
                   </span>
                 </td>
               </tr>

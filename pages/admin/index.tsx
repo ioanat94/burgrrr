@@ -36,7 +36,7 @@ function Index({ products, orders }) {
   };
 
   return (
-    <div className='min-h-[calc(100vh-80px)] bg-lightYellow flex flex-col gap-12 pt-6 px-2 md:pt-10 md:px-10 md:min-h-[calc(100vh-128px)]'>
+    <div className='min-h-[calc(100vh-80px)] bg-lightYellow flex flex-col gap-12 py-6 px-2 md:pt-10 md:px-10 md:min-h-[calc(100vh-128px)]'>
       <div className='flex flex-col gap-6 w-full'>
         <h1 className='text-2xl font-bold'>Products</h1>
         <table className='text-left'>
@@ -52,7 +52,7 @@ function Index({ products, orders }) {
           <tbody>
             {productList.map((product) => (
               <tr key={product._id}>
-                <td>
+                <td className='w-[150px]'>
                   <Image
                     src={product.img}
                     alt=''
@@ -61,7 +61,7 @@ function Index({ products, orders }) {
                     height='100'
                   />
                 </td>
-                <td>{product._id.slice(0, 5)}...</td>
+                <td className='max-w-[100px] truncate'>{product._id}</td>
                 <td>{product.title}</td>
                 <td>€{product.prices[1]}</td>
                 <td className='flex pt-6 gap-2 pt-[34px] md:pt-9'>
@@ -101,7 +101,7 @@ function Index({ products, orders }) {
           <tbody>
             {orderList.map((order) => (
               <tr key={order._id}>
-                <td>{order._id.slice(0, 5)}...</td>
+                <td className='max-w-[100px] truncate'>{order._id}</td>
                 <td>{order.customer}</td>
                 <td>€{order.total}</td>
                 <td>

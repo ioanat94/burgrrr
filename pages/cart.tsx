@@ -13,14 +13,28 @@ import { reset } from '../redux/cartSlice';
 import OrderDetails from '../components/OrderDetails';
 
 function Cart() {
+  const [cartTotal, setCartTotal] = useState(0);
+  const [cartProducts, setCartProducts] = useState([]);
+
   const dispatch = useDispatch();
   const router = useRouter();
-  const cart = useSelector((state: RootState) => state.cart);
+  const newCartTotal = useSelector((state: RootState) =>
+    state.cart.total.toFixed(2)
+  );
+  const newCartProducts = useSelector(
+    (state: RootState) => state.cart.products
+  );
+  useEffect(() => {
+    setCartTotal(newCartTotal);
+  }, [newCartTotal]);
+  useEffect(() => {
+    setCartProducts(newCartProducts);
+  }, [newCartProducts]);
 
   const [open, setOpen] = useState(false);
   const [cash, setCash] = useState(false);
 
-  const amount = cart.total;
+  const amount = cartTotal;
   const currency = 'EUR';
   // prettier-ignore
   const style = { "layout": "vertical" };
@@ -79,7 +93,7 @@ function Cart() {
               createOrder({
                 customer: shipping.name.full_name,
                 address: shipping.address.address_line_1,
-                total: cart.total,
+                total: cartTotal,
                 paymentMethod: 1,
               });
             });
@@ -104,7 +118,7 @@ function Cart() {
             </tr>
           </thead>
           <tbody>
-            {cart.products.map((product) => (
+            {cartProducts.map((product) => (
               <tr key={product._id}>
                 <td className='pt-5'>
                   <div>
@@ -157,7 +171,7 @@ function Cart() {
           <div>
             <div>
               <span className='font-bold mr-2'>Subtotal: </span>
-              <span>€{cart.total}</span>
+              <span>€{cartTotal}</span>
             </div>
             <div>
               <span className='font-bold mr-2'>Discount: </span>
@@ -165,7 +179,7 @@ function Cart() {
             </div>
             <div>
               <span className='font-bold mr-2'>Total: </span>
-              <span>€{cart.total}</span>
+              <span>€{cartTotal}</span>
             </div>
           </div>
           {open ? (
@@ -197,7 +211,7 @@ function Cart() {
           )}
         </div>
       </div>
-      {cash && <OrderDetails total={cart.total} createOrder={createOrder} />}
+      {cash && <OrderDetails total={cartTotal} createOrder={createOrder} />}
     </div>
   );
 }

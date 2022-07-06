@@ -1,11 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 
 function Navbar() {
-  const quantity = useSelector((state: RootState) => state.cart.quantity);
+  const [quantity, setQuantity] = useState('');
+  const newQuantity = useSelector((state: RootState) => state.cart.quantity);
+  useEffect(() => {
+    setQuantity(newQuantity);
+  }, [newQuantity]);
 
   const toggleMenu = () => {
     const btn = document.getElementById('menu-btn');

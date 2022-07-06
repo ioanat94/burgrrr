@@ -48,7 +48,10 @@ function Add({ setClose }) {
         img: url,
       };
 
-      await axios.post('http://localhost:3000/api/products', newProduct);
+      await axios.post(
+        'https://burgrrr.herokuapp.com/api/products',
+        newProduct
+      );
       setClose(true);
       router.reload();
     } catch (err) {

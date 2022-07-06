@@ -14,7 +14,7 @@ function Index({ products, orders }) {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete('http://localhost:3000/api/products/' + id);
+      await axios.delete('https://burgrrr.herokuapp.com/api/products/' + id);
       setProductList(productList.filter((product) => product._id !== id));
     } catch (err) {
       console.log(err);
@@ -26,9 +26,12 @@ function Index({ products, orders }) {
     const currentStatus = item.status;
 
     try {
-      const res = await axios.put('http://localhost:3000/api/orders/' + id, {
-        status: currentStatus + 1,
-      });
+      const res = await axios.put(
+        'https://burgrrr.herokuapp.com/api/orders/' + id,
+        {
+          status: currentStatus + 1,
+        }
+      );
       setOrderList([
         res.data,
         ...orderList.filter((order) => order._id !== id),
@@ -174,8 +177,10 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const productList = await axios.get('http://localhost:3000/api/products');
-  const orderList = await axios.get('http://localhost:3000/api/orders');
+  const productList = await axios.get(
+    'https://burgrrr.herokuapp.com/api/products'
+  );
+  const orderList = await axios.get('https://burgrrr.herokuapp.com/api/orders');
 
   return {
     props: {

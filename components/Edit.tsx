@@ -48,7 +48,7 @@ function Edit({ setClose, product }) {
           img: url,
         };
         await axios.put(
-          'http://localhost:3000/api/products/' + product._id,
+          'https://burgrrr.herokuapp.com/api/products/' + product._id,
           updatedProduct
         );
       } else {
@@ -60,7 +60,7 @@ function Edit({ setClose, product }) {
           img: product.img,
         };
         await axios.put(
-          'http://localhost:3000/api/products/' + product._id,
+          'https://burgrrr.herokuapp.com/api/products/' + product._id,
           updatedProduct
         );
       }

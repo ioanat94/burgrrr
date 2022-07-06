@@ -36,7 +36,7 @@ function Order({ order }) {
                   <span>{order.address}</span>
                 </td>
                 <td className='text-right'>
-                  <span className='font-bold'>€{order.total}</span>
+                  <span className='font-bold'>€{order.total.toFixed(2)}</span>
                 </td>
               </tr>
             </tbody>
@@ -116,7 +116,7 @@ function Order({ order }) {
           <div>
             <div>
               <span className='font-bold mr-2'>Subtotal: </span>
-              <span>€{order.total}</span>
+              <span>€{order.total.toFixed(2)}</span>
             </div>
             <div>
               <span className='font-bold mr-2'>Discount: </span>
@@ -124,7 +124,7 @@ function Order({ order }) {
             </div>
             <div>
               <span className='font-bold mr-2'>Total: </span>
-              <span>€{order.total}</span>
+              <span>€{order.total.toFixed(2)}</span>
             </div>
           </div>
           <button

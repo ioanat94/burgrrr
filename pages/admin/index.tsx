@@ -134,7 +134,7 @@ function Index({ products, orders }) {
               <tr key={order._id}>
                 <td className='max-w-[100px] truncate'>{order._id}</td>
                 <td>{order.customer}</td>
-                <td>€{order.total}</td>
+                <td>€{order.total.toFixed(2)}</td>
                 <td>
                   {order.paymentMethod === 0 ? (
                     <span>Cash</span>

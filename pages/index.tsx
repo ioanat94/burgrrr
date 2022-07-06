@@ -25,7 +25,7 @@ export default function Home({ productList }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await axios.get('https://burgrrr.herokuapp.com/api/products');
+  const res = await axios.get('https://burgrrr.vercel.app/api/products');
   return {
     props: {
       productList: res.data,

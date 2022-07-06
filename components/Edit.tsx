@@ -48,7 +48,7 @@ function Edit({ setClose, product }) {
           img: url,
         };
         await axios.put(
-          'https://burgrrr.herokuapp.com/api/products/' + product._id,
+          'https://burgrrr.vercel.app/api/products/' + product._id,
           updatedProduct
         );
       } else {
@@ -60,7 +60,7 @@ function Edit({ setClose, product }) {
           img: product.img,
         };
         await axios.put(
-          'https://burgrrr.herokuapp.com/api/products/' + product._id,
+          'https://burgrrr.vercel.app/api/products/' + product._id,
           updatedProduct
         );
       }

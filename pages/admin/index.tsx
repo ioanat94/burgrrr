@@ -14,7 +14,7 @@ function Index({ products, orders }) {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete('https://burgrrr.herokuapp.com/api/products/' + id);
+      await axios.delete('https://burgrrr.vercel.app/api/products/' + id);
       setProductList(productList.filter((product) => product._id !== id));
     } catch (err) {
       console.log(err);
@@ -27,7 +27,7 @@ function Index({ products, orders }) {
 
     try {
       const res = await axios.put(
-        'https://burgrrr.herokuapp.com/api/orders/' + id,
+        'https://burgrrr.vercel.app/api/orders/' + id,
         {
           status: currentStatus + 1,
         }
@@ -178,9 +178,9 @@ export const getServerSideProps = async (ctx) => {
   }
 
   const productList = await axios.get(
-    'https://burgrrr.herokuapp.com/api/products'
+    'https://burgrrr.vercel.app/api/products'
   );
-  const orderList = await axios.get('https://burgrrr.herokuapp.com/api/orders');
+  const orderList = await axios.get('https://burgrrr.vercel.app/api/orders');
 
   return {
     props: {

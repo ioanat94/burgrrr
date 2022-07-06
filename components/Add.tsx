@@ -48,10 +48,7 @@ function Add({ setClose }) {
         img: url,
       };
 
-      await axios.post(
-        'https://burgrrr.herokuapp.com/api/products',
-        newProduct
-      );
+      await axios.post('https://burgrrr.vercel.app/api/products', newProduct);
       setClose(true);
       router.reload();
     } catch (err) {

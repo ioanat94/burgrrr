@@ -133,7 +133,7 @@ function Product({ product }) {
 
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
-    `https://burgrrr.herokuapp.com/api/products/${params.id}`
+    `https://burgrrr.vercel.app/api/products/${params.id}`
   );
   return {
     props: {

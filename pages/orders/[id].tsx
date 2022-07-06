@@ -141,7 +141,7 @@ function Order({ order }) {
 
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
-    `https://burgrrr.herokuapp.com/api/orders/${params.id}`
+    `https://burgrrr.vercel.app/api/orders/${params.id}`
   );
   return {
     props: {

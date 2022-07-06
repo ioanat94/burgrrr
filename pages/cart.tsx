@@ -43,7 +43,7 @@ function Cart() {
   const createOrder = async (data) => {
     try {
       const res = await axios.post(
-        'https://burgrrr.herokuapp.com/api/orders',
+        'https://burgrrr.vercel.app/api/orders',
         data
       );
       res.status === 201 && router.push('/orders/' + res.data._id);

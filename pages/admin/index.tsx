@@ -2,9 +2,12 @@ import axios from 'axios';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import Add from '../../components/Add';
+import Edit from '../../components/Edit';
 
 function Index({ products, orders }) {
   const [close, setClose] = useState(true);
+  const [edit, setEdit] = useState(false);
+  const [product, setProduct] = useState(null);
   const [productList, setProductList] = useState(products);
   const [orderList, setOrderList] = useState(orders);
   const status = ['Preparing', 'On the way', 'Delivered'];
@@ -66,14 +69,25 @@ function Index({ products, orders }) {
                 <td>€{product.prices[1]}</td>
                 <td>
                   <span className='flex gap-2'>
-                    <button onClick={() => setClose(false)}>
+                    <button
+                      onClick={() => {
+                        setClose(false);
+                        setEdit(false);
+                      }}
+                    >
                       <Image
                         src='/assets/icons/add.png'
                         width='30'
                         height='30'
                       />
                     </button>
-                    <button onClick={() => setClose(false)}>
+                    <button
+                      onClick={() => {
+                        setClose(false);
+                        setEdit(true);
+                        setProduct(product);
+                      }}
+                    >
                       <Image
                         src='/assets/icons/edit.png'
                         width='30'
@@ -93,7 +107,8 @@ function Index({ products, orders }) {
             ))}
           </tbody>
         </table>
-        {!close && <Add setClose={setClose} />}
+        {!close && edit && <Edit setClose={setClose} product={product} />}
+        {!close && !edit && <Add setClose={setClose} />}
       </div>
       <div className='flex flex-col gap-12 w-full'>
         <h1 className='text-2xl font-bold'>Orders</h1>

@@ -25,10 +25,14 @@ export default async function handler(req, res) {
       return res.status(401).json('Not authenticated');
     }
     try {
-      const product = await Product.findByIdAndUpdate(id, req.body, {
-        new: true,
-      });
-      res.status(200).json(product);
+      const updatedProduct = await Product.findByIdAndUpdate(
+        id,
+        { $set: req.body },
+        {
+          new: true,
+        }
+      );
+      res.status(200).json(updatedProduct);
     } catch (err) {
       res.status(500).json(err);
     }

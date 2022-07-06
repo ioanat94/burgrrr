@@ -11,9 +11,7 @@ function Index({ products, orders }) {
 
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(
-        'http://localhost:3000/api/products/' + id
-      );
+      await axios.delete('http://localhost:3000/api/products/' + id);
       setProductList(productList.filter((product) => product._id !== id));
     } catch (err) {
       console.log(err);

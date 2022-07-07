@@ -3,6 +3,15 @@ import Order from '../../../models/Order';
 
 export default async function handler(req, res) {
   const { method } = req;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    'GET,HEAD,OPTIONS,POST,PUT,DELETE'
+  );
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Referer, sec-ch-ua, sec-ch-ua-mobile, sec-ch-ua-platform, token, User-Agent, Authorization'
+  );
 
   await dbConnect();
 

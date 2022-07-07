@@ -16,6 +16,7 @@ import { removeProduct } from '../redux/cartSlice';
 function Cart() {
   const [cartTotal, setCartTotal] = useState(0);
   const [cartProducts, setCartProducts] = useState([]);
+  const [close, setClose] = useState(false);
 
   const dispatch = useDispatch();
   const router = useRouter();
@@ -33,7 +34,6 @@ function Cart() {
   }, [newCartProducts]);
 
   const [open, setOpen] = useState(false);
-  const [cash, setCash] = useState(false);
 
   const amount = cartTotal;
   const currency = 'EUR';
@@ -133,7 +133,7 @@ function Cart() {
           <tbody>
             {cartProducts.map((product) => (
               <tr key={`${product._id}${Math.random() * 5}`}>
-                <td className='text-right md:hover:cursor-pointer'>
+                <td className='text-right w-[30px] md:hover:cursor-pointer'>
                   <Image
                     src='/assets/icons/remove.png'
                     alt=''
@@ -208,7 +208,7 @@ function Cart() {
             <div className='flex flex-col gap-2'>
               <button
                 className='bg-lightYellow text-brown font-bold rounded w-full h-9 md:hover:bg-[#d1ce8e]'
-                onClick={() => setCash(true)}
+                onClick={() => setClose(true)}
               >
                 CASH ON DELIVERY
               </button>
@@ -233,7 +233,13 @@ function Cart() {
           )}
         </div>
       </div>
-      {cash && <OrderDetails total={cartTotal} createOrder={createOrder} />}
+      {close && (
+        <OrderDetails
+          total={cartTotal}
+          createOrder={createOrder}
+          setClose={setClose}
+        />
+      )}
     </div>
   );
 }

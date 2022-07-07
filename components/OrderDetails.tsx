@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function OrderDetails({ total, createOrder }) {
+function OrderDetails({ total, createOrder, setClose }) {
   const [customer, setCustomer] = useState('');
   const [address, setAddress] = useState('');
 
@@ -16,7 +16,13 @@ function OrderDetails({ total, createOrder }) {
 
   return (
     <div className='absolute top-0 left-0 w-full h-[calc(100vh+48px)] flex items-center justify-center bg-[#7c7c7c66] z-[100]'>
-      <div className='w-[95%] px-4 md:w-[600px] md:px-16 bg-white rounded-lg p-16 flex flex-col gap-8 items-center justify-center'>
+      <div className='relative w-[95%] px-4 md:w-[600px] md:px-16 bg-white rounded-lg p-16 flex flex-col gap-8 items-center justify-center'>
+        <span
+          className='absolute right-4 top-4 border-2 border-solid rounded-full w-max px-2 font-bold md:transition-all md:hover:border-white md:hover:bg-[#e5e7eb] md:hover:cursor-pointer'
+          onClick={() => setClose(false)}
+        >
+          X
+        </span>
         <h1 className='text-3xl text-center'>
           You will pay €{total} after delivery
         </h1>

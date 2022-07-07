@@ -1,10 +1,25 @@
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import Events from '../components/Events';
 import ProductList from '../components/ProductList';
 import Slider from '../components/Slider';
 import Head from '../node_modules/next/head';
 
-export default function Home({ productList }) {
+export default function Home() {
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    const getProps = async () => {
+      try {
+        const res = await axios.get('https://burgrrr.vercel.app/api/products');
+        setProductList(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getProps();
+  });
+
   return (
     <div>
       <Head>
@@ -23,12 +38,3 @@ export default function Home({ productList }) {
     </div>
   );
 }
-
-export const getServerSideProps = async () => {
-  const res = await axios.get('https://burgrrr.vercel.app/api/products');
-  return {
-    props: {
-      productList: res.data,
-    },
-  };
-};

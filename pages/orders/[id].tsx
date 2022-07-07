@@ -12,7 +12,7 @@ function Order({ order }) {
   };
 
   return (
-    <div className='flex flex-col gap-10 px-4 py-8 min-h-[calc(100vh-80px)] md:p-12 md:h-[calc(100vh-128px)] md:flex-row'>
+    <div className='flex flex-col gap-10 px-4 py-8 min-h-[calc(100vh-80px)] bg-lightYellow md:p-12 md:h-[calc(100vh-128px)] md:flex-row'>
       <div className='md:flex-[2_2_0%] flex flex-col gap-20'>
         <div>
           <table className='text-center table-fixed md:text-left md:w-3/4'>

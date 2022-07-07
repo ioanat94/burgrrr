@@ -11,7 +11,11 @@ export default function Home() {
   useEffect(() => {
     const getProps = async () => {
       try {
-        const res = await axios.get('https://burgrrr.vercel.app/api/products');
+        const res = await axios.get('https://burgrrr.vercel.app/api/products', {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
         setProductList(res.data);
       } catch (err) {
         console.log(err);

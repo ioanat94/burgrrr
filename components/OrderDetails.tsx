@@ -39,7 +39,7 @@ function OrderDetails({ total, createOrder }) {
           />
         </div>
         <button
-          className='border-2 border-solid rounded-lg py-2 px-6 md:transition-all md:hover:border-white md:hover:bg-[#e5e7eb]'
+          className='border-2 border-solid rounded-lg py-2 px-6 cursor-pointer md:transition-all md:hover:border-white md:hover:bg-[#e5e7eb]'
           onClick={handleClick}
         >
           Order

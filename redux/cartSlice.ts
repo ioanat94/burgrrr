@@ -6,7 +6,10 @@ let order;
   if (typeof window !== 'undefined') {
     order = localStorage.getItem('order')
       ? JSON.parse(localStorage.getItem('order'))
-      : localStorage.setItem('order', JSON.stringify({}));
+      : localStorage.setItem(
+          'order',
+          JSON.stringify({ products: [], quantity: 0, total: 0 })
+        );
     return order;
   }
 })();

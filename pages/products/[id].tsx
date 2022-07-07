@@ -120,7 +120,7 @@ function Product({ product }) {
             onChange={(e) => setQuantity(parseInt(e.target.value))}
           />
           <button
-            className='border-2 border-brown rounded-lg py-1 px-2 text-brown font-bold md:hover:text-lightYellow md:hover:bg-brown'
+            className='border-2 border-brown rounded-lg py-1 px-2 text-brown font-bold cursor-pointer md:hover:text-lightYellow md:hover:bg-brown'
             onClick={handleClick}
           >
             Add to Cart

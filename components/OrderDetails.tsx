@@ -4,6 +4,10 @@ function OrderDetails({ total, createOrder }) {
   const [customer, setCustomer] = useState('');
   const [address, setAddress] = useState('');
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
   const handleClick = () => {
     if (customer !== '' && address !== '') {
       createOrder({ customer, address, total, paymentMethod: 0 });
@@ -16,7 +20,10 @@ function OrderDetails({ total, createOrder }) {
         <h1 className='text-3xl text-center'>
           You will pay €{total} after delivery
         </h1>
-        <form className='w-full md:w-[600px] md:px-16 flex flex-col gap-8 items-center justify-center'>
+        <form
+          onSubmit={(e) => onSubmit(e)}
+          className='w-full md:w-[600px] md:px-16 flex flex-col gap-8 items-center justify-center'
+        >
           <div className='flex flex-col gap-2 w-full'>
             <label>Full Name</label>
             <input

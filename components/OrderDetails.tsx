@@ -12,9 +12,11 @@ function OrderDetails({ total, createOrder }) {
 
   return (
     <div className='absolute top-0 left-0 w-full h-[calc(100vh+48px)] flex items-center justify-center bg-[#7c7c7c66] z-[100]'>
-      <div className='w-[600px] bg-white rounded-lg p-16 flex flex-col gap-8 items-center justify-center'>
-        <h1 className='text-3xl'>You will pay €{total} after delivery</h1>
-        <form className='w-[600px] px-16 flex flex-col gap-8 items-center justify-center'>
+      <div className='w-[95%] px-4 md:w-[600px] md:px-16 bg-white rounded-lg p-16 flex flex-col gap-8 items-center justify-center'>
+        <h1 className='text-3xl text-center'>
+          You will pay €{total} after delivery
+        </h1>
+        <form className='w-full md:w-[600px] md:px-16 flex flex-col gap-8 items-center justify-center'>
           <div className='flex flex-col gap-2 w-full'>
             <label>Full Name</label>
             <input

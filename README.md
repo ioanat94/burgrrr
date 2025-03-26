@@ -4,16 +4,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/ioanat94/burgrrr">
-    <img src="https://burgrrr.vercel.app/_next/image?url=%2Fassets%2Flogo.png&w=1920&q=75" alt="Logo" width="120" height="auto">
-  </a>
 <h3 align="center">burGRRR</h3>
 
   <p align="center">
     A landing page/food ordering app for a fictional burger restaurant.
-    <br />
-    <br />
-    <a href="https://burgrrr.vercel.app/">View website</a>
     <br />
     <br />
   </p>
@@ -106,7 +100,7 @@ To get a local copy up and running follow these simple steps.
 - Click 'Checkout' to choose payment method. Input your information if paying cash on delivery, or log into your Paypal account if you are paying with Paypal.
 - Follow the order page to see the status of your order.
 - Admin dashboard:
-  - Navigate to https://burgrrr.vercel.app/admin/ and log in.
+  - Navigate to '/admin' and log in.
   - Use the 'Add' button to create a new product, the 'Edit' button to modify an existing product, or the 'Delete' button to remove a product.
   - Use the 'Forward' button to advance the status of an order.
 
